@@ -33,6 +33,9 @@ def generate_secret_number():
             secret_number = ''.join(map(str, digits[:4]))  # Creating secret number
         return secret_number
 
+def has_duplicates(input_str):
+    """Checks if the input string contains duplicate digits."""
+    return len(set(input_str)) != len(input_str)
     
 def play_game():
     """Hra Bulls and Cows.
@@ -65,6 +68,8 @@ def play_game():
             print("Your input contains non-numeric values.")
         elif user_input in previous_guesses:
             print("You have already guessed this number. Try a different one.")
+        elif has_duplicates(user_input):
+            print("Your input contains duplicate digits.")
         elif user_input == secret_number:
             #elapsed time till we know the result
             end_time = time.time()
