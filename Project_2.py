@@ -50,7 +50,7 @@ def play_game():
     print("-----------------------------------------------")
 
     secret_number = generate_secret_number()
-    print(secret_number)
+    #print(secret_number)
     guesses = 0
     previous_guesses = set()
     bulls = 0
